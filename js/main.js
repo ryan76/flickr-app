@@ -33,8 +33,10 @@
         console.log(data);
         
         var photos = data.photos.photo;
+        var currentPage = data.photos.page;
+        var totalPages = data.photos.pages;
         var thumbnailList = document.getElementsByClassName('thumbnails-list')[0];
-        thumbnailGallery = new ThumbnailGallery(photos, thumbnailList);
+        thumbnailGallery = new ThumbnailGallery(photos, thumbnailList, currentPage, totalPages);
         thumbnailGallery.createGallery();;
     }
     
