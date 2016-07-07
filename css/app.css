@@ -113,7 +113,12 @@ header#top {
     display: inline;
     float: left;
     width: 97.91667%;
-    margin: 0 1.04167%;
+    margin: 0 1.04167%; }
+
+  .thumbnails-container {
+    margin-bottom: 2em; }
+
+  #sidebar {
     margin-bottom: 1em; } }
 @media screen and (max-width: 320px) {
   main {

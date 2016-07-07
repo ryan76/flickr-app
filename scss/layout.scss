@@ -52,6 +52,13 @@ header#top {
   .thumbnails-container,
   #sidebar {
     @include column(12);
+  }
+
+  .thumbnails-container {
+    margin-bottom: 2em;
+  }
+
+  #sidebar {
     margin-bottom: 1em;
   }
 }
