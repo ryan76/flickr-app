@@ -1,3 +1,7 @@
 .thumbnails-container {
-
+  .thumbnail {
+    &:hover {
+      @include transform(scale(1.1));
+    }
+  }
 }

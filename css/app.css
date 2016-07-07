@@ -53,6 +53,8 @@ table {
  *  has against white. 12 is the primary color for each.
  */
 /* Breakpoints */
+/* Vendor prefixes for transform */
+/* Vertically center an element */
 body {
   width: 100%;
   *zoom: 1; }
@@ -130,5 +132,17 @@ h1 {
   font-size: 2em;
   padding: 1em;
   color: #166da5; }
+
+h2 {
+  font-family: Georgia;
+  font-size: 1.5em;
+  color: #e29924; }
+
+.thumbnails-container .thumbnail:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,0 +1,75 @@
+// Strips units from a number
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// Converts px to rem
+@function calculate-rem($size) {
+  $rem-size: $size / 16px;
+  @return #{$rem-size}rem;
+}
+
+@function parse-int($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+// Accepts px or rem values and produces property in rem with px fallback
+// Usage: @include rem(padding, 20px 10px);
+// You must include the correct units for values
+// Does not work with all properties (border shorthand among others): use calculate-rem for those
+// To use rem, the html font-size must be set to 62.5%
+// See: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+@mixin rem($property, $values) {
+  $px: ();
+  $rem: ();
+
+  @each $value in $values {
+
+    @if $value == 0 or $value == auto {
+      $px: append($px , $value);
+      $rem: append($rem, $value);
+    } @else {
+      @if unitless($value) {
+        @warn '$value may not be unitless, was #{$value}.';
+      } @else {
+        $unit: unit($value);
+        $val: parse-int($value);
+
+        @if $unit == 'px' {
+          $px: append($px, $value);
+          $rem: append($rem, ($val / 10 + rem));
+        } @else if $unit == 'rem' {
+          $px: append($px, ($val * 10 + px));
+          $rem: append($rem, $value);
+        } @else {
+          @warn 'Units of $value must be either px or rem, was #{$unit}.';
+        }
+      }
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}
+
+/* Vendor prefixes for transform */
+@mixin transform($val){
+  @if($val != null){
+    -webkit-transform: $val;
+    -moz-transform   : $val;
+    -o-transform     : $val;
+    -ms-transform    : $val;
+    transform        : $val;
+  }
+}
+
+/* Vertically center an element */
+@mixin verticalCenter() {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
