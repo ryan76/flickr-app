@@ -6,7 +6,7 @@
         page = page > 0 ? page : 1;
 
         Flickr.fetchPhotos({
-            per_page: 6,
+            per_page: 12,
             jsoncallback: 'Site.Main.showPhotos',
             page: page
         });
