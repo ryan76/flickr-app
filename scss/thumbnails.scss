@@ -1,14 +1,13 @@
-.thumbnails-container {
-  .thumbnail {
-    -webkit-transition: 0.2s ease-in-out;
-    -moz-transition: 0.2s ease-in-out;
-    -o-transition: 0.2s ease-in-out;
-    transition: 0.2s ease-in-out;
-    &:hover {
-      @include transform(scale(1.1));
-    }
+.thumbnail {
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    @include transform(scale(1.1));
   }
 }
+
 
 #prev-button {
   color: $white;
@@ -18,4 +17,16 @@
 #next-button {
   color: $white;
   background-color: $blue-13;
+}
+
+@media screen and (max-width: $small-breakpoint) {
+  .thumbnail {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    &:hover {
+      @include transform(none);
+    }
+  }
 }

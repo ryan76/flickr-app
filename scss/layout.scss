@@ -14,8 +14,19 @@ $total-width: 100%;
 // LAYOUT //
 ////////////
 
+main {
+  margin-top: 90px;
+}
+
 header#top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   margin-bottom: 1em;
+  background: #222;
+  color: $white;
+  padding: 0 20px 0 0;
 }
 
 .thumbnails-container {
@@ -46,6 +57,10 @@ header#top {
 }
 
 @media screen and (max-width: $small-breakpoint) {
+  main {
+    margin-top: 103px;
+  }
+
   .thumbnails-container {
     @include column(12);
 
