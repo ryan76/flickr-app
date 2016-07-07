@@ -45,4 +45,55 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  width: 100%;
+  *zoom: 1; }
+  body:before, body:after {
+    content: "";
+    display: table; }
+  body:after {
+    clear: both; }
+
+header#top {
+  margin-bottom: 1em; }
+
+.thumbnails-container {
+  display: inline;
+  float: left;
+  width: 64.58333%;
+  margin: 0 1.04167%;
+  margin-left: 9.375%; }
+  .thumbnails-container .thumbnails-list {
+    display: block;
+    width: 103.125%;
+    margin: 0 -1.5625%;
+    *zoom: 1; }
+    .thumbnails-container .thumbnails-list:before, .thumbnails-container .thumbnails-list:after {
+      content: "";
+      display: table; }
+    .thumbnails-container .thumbnails-list:after {
+      clear: both; }
+    .thumbnails-container .thumbnails-list .thumbnail {
+      display: inline;
+      float: left;
+      width: 21.875%;
+      margin: 0 1.5625%;
+      margin-bottom: 1em; }
+
+#sidebar {
+  display: inline;
+  float: left;
+  width: 14.58333%;
+  margin: 0 1.04167%;
+  margin-left: 9.375%; }
+
+@media screen and (max-width: 720px) {
+  .thumbnails-container,
+  #sidebar {
+    display: inline;
+    float: left;
+    width: 97.91667%;
+    margin: 0 1.04167%;
+    margin-bottom: 1em; } }
+
 /*# sourceMappingURL=app.css.map */

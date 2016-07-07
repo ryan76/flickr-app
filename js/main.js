@@ -24,8 +24,8 @@
             img = document.createElement('img');
             img.src = Flickr.buildPhotoUrlThumbnail(photos[i]);
             img.className = 'thumbnail';
-            img.alt = photos[index].title;
-            img.title = photos[index].title;
+            img.alt = photos[i].title;
+            img.title = photos[i].title;
 
             link = document.createElement('a');
             link.href = img.src;
