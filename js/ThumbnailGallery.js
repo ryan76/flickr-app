@@ -2,9 +2,11 @@
 (function(document, window) {
     'use strict';
 
-    function ThumbnailGallery(photos, thumbnailList) {
+    function ThumbnailGallery(photos, thumbnailList, currentPage, totalPages) {
         this.photos = photos;
         this.thumbnailList = thumbnailList;
+        this.currentPage = currentPage || 1;
+        this.totalPages = totalPages;
     }
 
     ThumbnailGallery.prototype.createGallery = function() {
@@ -31,9 +33,32 @@
         }
 
         // TODO - remove after debugging
-        console.log(data);
         console.log(photos);
     };
+    
+    ThumbnailGallery.prototype.showNextPage = function() {
+        if (this.currentPage < this.totalPages) {
+            this.currentPage++;
+        }
+
+        Flickr.fetchPhotos({
+            per_page: 12,
+            jsoncallback: 'Site.Main.updatePhotos',
+            page: this.currentPage
+        });
+    }
+
+    ThumbnailGallery.prototype.showPrevPage = function() {
+        if (this.currentPage > 1) {
+            this.currentPage--;
+        }
+
+        Flickr.fetchPhotos({
+            per_page: 12,
+            jsoncallback: 'Site.Main.updatePhotos',
+            page: this.currentPage
+        });
+    }
 
     window.ThumbnailGallery = ThumbnailGallery;
 })(document, window);
