@@ -45,6 +45,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* VARIABLES */
+/* TYPE */
+/**
+ *  COLORS
+ *  (3) or (4.5) indicates the contrast ratio that color
+ *  has against white. 12 is the primary color for each.
+ */
+/* Breakpoints */
 body {
   width: 100%;
   *zoom: 1; }
@@ -117,5 +125,10 @@ header#top {
         width: 97.91667%;
         margin: 0 1.04167%;
         margin-bottom: 0.5em; } }
+h1 {
+  font-family: Georgia;
+  font-size: 2em;
+  padding: 1em;
+  color: #166da5; }
 
 /*# sourceMappingURL=app.css.map */

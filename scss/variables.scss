@@ -1,3 +1,187 @@
-// Breakpoints
+/* VARIABLES */
+
+
+/* TYPE */
+$font-size-h1: 2em;
+$font-size-h2: inherit;
+$font-size-h3: inherit;
+$font-size-h4: inherit;
+$font-size-h5: inherit;
+$font-size-h6: inherit;
+
+$headings-line-height: inherit;
+
+
+
+/**
+ *  COLORS
+ *  (3) or (4.5) indicates the contrast ratio that color
+ *  has against white. 12 is the primary color for each.
+ */
+
+// Blue
+$blue-1: #e8f3fb;
+$blue-2: #d2e8f7;
+$blue-3: #bdddf4;
+$blue-4: #a8d3f0;
+$blue-5: #94c7eb;
+$blue-6: #82bce6;
+$blue-7: #6fb1e1;
+$blue-8: #5da5da;
+$blue-9: #5199d3;
+$blue-10: #4092cf; // (3)
+$blue-11: #2e8aca; // (3)
+$blue-12: #1e7bbb; // (4.5)
+$blue-13: #1775b1; // (4.5)
+$blue-14: #166da5; // (4.5)
+
+// Blue Green
+$blue-green-1: #e8f6f8;
+$blue-green-2: #d3edf1;
+$blue-green-3: #bce3ea;
+$blue-green-4: #a7dae3;
+$blue-green-5: #90d1db;
+$blue-green-6: #7ac8d4;
+$blue-green-7: #64becd;
+$blue-green-8: #4eb5c6;
+$blue-green-9: #38acbf;
+$blue-green-10: #22a3b8; // (3.0)
+$blue-green-11: #1893a4; // (3.0)
+$blue-green-12: #0d8390; // (4.5)
+$blue-green-13: #0c727b; // (4.5)
+$blue-green-14: #0a6266; // (4.5)
+
+// Green
+$green-1: #ecf5ec;
+$green-2: #d8ecda;
+$green-3: #c5e1c6;
+$green-4: #b3d9b4;
+$green-5: #a0cda1;
+$green-6: #8dc490;
+$green-7: #7bbb7e;
+$green-8: #68b26b;
+$green-9: #54a858;
+$green-10: #439f47; // (3.0)
+$green-11: #3d9043; // (3.0)
+$green-12: #3d843f; // (4.5)
+$green-13: #36793b; // (4.5)
+$green-14: #2e6c35; // (4.5)
+
+// Amber
+$amber-1: #fffcf6;
+$amber-2: #fff7e9;
+$amber-3: #ffefd4;
+$amber-4: #fee7bd;
+$amber-5: #fee0a8;
+$amber-6: #fed892;
+$amber-7: #fed07d;
+$amber-8: #fec867;
+$amber-9: #fdc151;
+$amber-10: #fdb93b;
+$amber-11: #fdb531;
+$amber-12: #fdb126;
+$amber-13: #f0a525;
+$amber-14: #e29924;
+
+// Orange
+$orange-1: #fef3eb;
+$orange-2: #fce2cc;
+$orange-3: #fad3b2;
+$orange-4: #f9c499;
+$orange-5: #f7b57f;
+$orange-6: #f5a766;
+$orange-7: #f4984c;
+$orange-8: #f28933;
+$orange-9: #f17a19;
+$orange-10: #ef6c00; // (3.0)
+$orange-11: #dd5d06; // (3.0)
+$orange-12: #cb4e0b; // (4.5)
+$orange-13: #bd460b; // (4.5)
+$orange-14: #af3d0b; // (4.5)
+
+// Red
+$red-1: #fef0ef;
+$red-2: #fdd9d7;
+$red-3: #fcc6c2;
+$red-4: #fbb4af;
+$red-5: #f9a19a;
+$red-6: #f88e86;
+$red-7: #f77b72;
+$red-8: #f6695e;
+$red-9: #f5554a;
+$red-10: #f44336; // (3.0)
+$red-11: #ec362f; // (3.0)
+$red-12: #e42927; // (4.5)
+$red-13: #d82726; // (4.5)
+$red-14: #cc2525; // (4.5)
+
+// Pink
+$pink-1: #fdf0f4;
+$pink-2: #fbd9e4;
+$pink-3: #f9c5d7;
+$pink-4: #f7b3ca;
+$pink-5: #f59fbc;
+$pink-6: #f48caf;
+$pink-7: #f279a2;
+$pink-8: #f06695;
+$pink-9: #ee5387;
+$pink-10: #ec407a; // (3.0)
+$pink-11: #e53476; // (3.0)
+$pink-12: #dd2872; // (4.5)
+$pink-13: #cc2771; // (4.5)
+$pink-14: #ba2570; // (4.5)
+
+// Purple
+$purple-1: #f9f3fb;
+$purple-2: #f4e8f5;
+$purple-3: #ead1ee;
+$purple-4: #e3c3e9;
+$purple-5: #dcb3e3;
+$purple-6: #d6a4de;
+$purple-7: #cf95d8;
+$purple-8: #c886d3;
+$purple-9: #c177cd;
+$purple-10: #ba68c8; // (3.0)
+$purple-11: #ab48bc; // (4.5)
+$purple-12: #9d37b0; // (4.5)
+$purple-13: #8f25a3; // (4.5)
+$purple-14: #822396; // (4.5)
+
+// Deep Purple
+$deep-purple-1: #f5f1fa;
+$deep-purple-2: #e5ddf3;
+$deep-purple-3: #d8cced;
+$deep-purple-4: #cbbce7;
+$deep-purple-5: #beabe0;
+$deep-purple-6: #b29ada;
+$deep-purple-7: #a489d4;
+$deep-purple-8: #9879ce; // (3)
+$deep-purple-9: #8b67c8; // (3)
+$deep-purple-10: #7e57c2; // (4.5)
+$deep-purple-11: #7349bd; // (4.5)
+$deep-purple-12: #673ab7; // (4.5)
+$deep-purple-13: #5d36a9; // (4.5)
+$deep-purple-14: #53329b; // (4.5)
+
+// Grey
+$grey-1: #f6f7f7;
+$grey-2: #e9eaec;
+$grey-3: #d4d6d9;
+$grey-4: #bec0c6;
+$grey-5: #a9acb3;
+$grey-6: #9397a0;
+$grey-7: #7e838d; // (3.0)
+$grey-8: #686e7a; // (4.5)
+$grey-9: #535967; // (4.5)
+$grey-10: #3d4454; // (4.5)
+$grey-11: #333a4a; // (4.5)
+$grey-12: #283041; // (4.5)
+$grey-13: #202734; // (4.5)
+$grey-14: #181d26; // (4.5)
+
+$white: #fff;
+$black: #000;
+
+/* Breakpoints */
 $small-breakpoint: 320px;
 $medium-breakpoint: 720px;
