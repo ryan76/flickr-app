@@ -31,23 +31,27 @@
     function showPhotos(data) {
         // TODO - remove after debugging
         console.log(data);
-        
-        var photos = data.photos.photo;
-        var currentPage = data.photos.page;
-        var totalPages = data.photos.pages;
-        var thumbnailList = document.getElementsByClassName('thumbnails-list')[0];
+
+        var photos, currentPage, totalPages, thumbnailList;
+        photos = data.photos.photo;
+        currentPage = data.photos.page;
+        totalPages = data.photos.pages;
+        thumbnailList = document.getElementsByClassName('thumbnails-list')[0];
         thumbnailGallery = new ThumbnailGallery(photos, thumbnailList, currentPage, totalPages);
         thumbnailGallery.createGallery();;
     }
     
     function updatePhotos(data) {
-        var photos = data.photos.photo;
-        var currentPage = data.photos.page;
-        var totalPages = data.photos.pages;
-        var thumbnailList = document.getElementsByClassName('thumbnails-list')[0];
+        var photos, currentPage, totalPages, thumbnailList;
+        photos = data.photos.photo;
+        currentPage = data.photos.page;
+        totalPages = data.photos.pages;
+        thumbnailList = document.getElementsByClassName('thumbnails-list')[0];
+
         while (thumbnailList.firstChild) {
             thumbnailList.removeChild(thumbnailList.firstChild);
         }
+        
         thumbnailGallery = new ThumbnailGallery(photos, thumbnailList, currentPage, totalPages);
         thumbnailGallery.createGallery();
     }
