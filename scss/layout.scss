@@ -37,10 +37,25 @@ header#top {
   @include push(1);
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: $medium-breakpoint) {
   .thumbnails-container,
   #sidebar {
     @include column(12);
     margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: $small-breakpoint) {
+  .thumbnails-container {
+    @include column(12);
+
+    .thumbnails-list {
+      @include row(12);
+
+      .thumbnail {
+        @include column(12,12);
+        margin-bottom: 0.5em;
+      }
+    }
   }
 }

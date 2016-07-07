@@ -95,5 +95,27 @@ header#top {
     width: 97.91667%;
     margin: 0 1.04167%;
     margin-bottom: 1em; } }
+@media screen and (max-width: 320px) {
+  .thumbnails-container {
+    display: inline;
+    float: left;
+    width: 97.91667%;
+    margin: 0 1.04167%; }
+    .thumbnails-container .thumbnails-list {
+      display: block;
+      width: 102.08333%;
+      margin: 0 -1.04167%;
+      *zoom: 1; }
+      .thumbnails-container .thumbnails-list:before, .thumbnails-container .thumbnails-list:after {
+        content: "";
+        display: table; }
+      .thumbnails-container .thumbnails-list:after {
+        clear: both; }
+      .thumbnails-container .thumbnails-list .thumbnail {
+        display: inline;
+        float: left;
+        width: 97.91667%;
+        margin: 0 1.04167%;
+        margin-bottom: 0.5em; } }
 
 /*# sourceMappingURL=app.css.map */
