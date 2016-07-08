@@ -65,7 +65,8 @@ body {
     clear: both; }
 
 main {
-  margin-top: 115px; }
+  margin-top: 115px;
+  z-index: 9999; }
 
 header#top {
   position: fixed;
