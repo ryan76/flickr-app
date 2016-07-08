@@ -2,11 +2,13 @@
 (function(document, window) {
     'use strict';
 
-    function ThumbnailGallery(photos, thumbnailList, currentPage, totalPages) {
+    function ThumbnailGallery(photos, thumbnailList, currentPage, totalPages, filterPhotosMode, filterText) {
         this.photos = photos;
         this.thumbnailList = thumbnailList;
         this.currentPage = currentPage || 1;
         this.totalPages = totalPages;
+        this.filterPhotosMode = filterPhotosMode || false;
+        this.filterText = filterText || '';
     }
 
     ThumbnailGallery.prototype.createGallery = function() {
@@ -34,9 +36,6 @@
 
             thumbnailList.appendChild(listItem);
         }
-
-        // TODO - remove after debugging
-        console.log(photos);
     };
     
     ThumbnailGallery.prototype.showNextPage = function() {
@@ -44,11 +43,20 @@
             this.currentPage++;
         }
 
-        Flickr.fetchPhotos({
-            per_page: 12,
-            jsoncallback: 'Site.Main.updatePhotos',
-            page: this.currentPage
-        });
+        if (this.filterPhotosMode) {
+            Flickr.filterPhotos({
+                text: this.filterText,
+                per_page: 12,
+                jsoncallback: 'Site.Main.updatePhotos',
+                page: this.currentPage
+            });
+        } else {
+            Flickr.fetchPhotos({
+                per_page: 12,
+                jsoncallback: 'Site.Main.updatePhotos',
+                page: this.currentPage
+            });
+        }
     }
 
     ThumbnailGallery.prototype.showPrevPage = function() {
@@ -56,11 +64,20 @@
             this.currentPage--;
         }
 
-        Flickr.fetchPhotos({
-            per_page: 12,
-            jsoncallback: 'Site.Main.updatePhotos',
-            page: this.currentPage
-        });
+        if (this.filterPhotosMode) {
+            Flickr.filterPhotos({
+                text: this.filterText,
+                per_page: 12,
+                jsoncallback: 'Site.Main.updatePhotos',
+                page: this.currentPage
+            });
+        } else {
+            Flickr.fetchPhotos({
+                per_page: 12,
+                jsoncallback: 'Site.Main.updatePhotos',
+                page: this.currentPage
+            });
+        }
     }
 
     window.ThumbnailGallery = ThumbnailGallery;

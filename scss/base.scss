@@ -32,3 +32,28 @@ button {
   white-space: nowrap;
   border-radius: 4px;
 }
+
+#query {
+  position: relative;
+  top: 1px;
+  font-family: Georgia;
+  border-radius: 4px;
+  border: 0;
+  height: 22px;
+  padding-left: 5px;
+}
+
+input[type="submit"] {
+  font-family: Georgia;
+  border-radius: 4px;
+  border: 0;
+  background-color: #c7c9cf;
+  color: #434343;
+  height: 22px;
+}
+
+@media screen and (max-width: $medium-breakpoint) {
+  #query, input[type="submit"] {
+    display: none;
+  }
+}

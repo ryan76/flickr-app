@@ -3,6 +3,9 @@
     'use strict';
 
     var thumbnailGallery;
+    var lastSearch = '';
+    var filterPhotosMode = false;
+    var filterText = '';
     
     function initPhotos(page) {
         page = page > 0 ? page : 1;
@@ -10,6 +13,19 @@
         Flickr.fetchPhotos({
             per_page: 12,
             jsoncallback: 'Site.Main.showPhotos',
+            page: page
+        });
+    }
+
+    function filterPhotos(text, page) {
+        page = page > 0 ? page : 1;
+        filterPhotosMode = true;
+        filterText = text;
+        
+        Flickr.filterPhotos({
+            text: text,
+            per_page: 12,
+            jsoncallback: 'Site.Main.updatePhotos',
             page: page
         });
     }
@@ -26,18 +42,24 @@
         prevButton.addEventListener('click', function() {
             thumbnailGallery.showPrevPage.bind(thumbnailGallery)();
         });
+
+        document.getElementsByClassName('form-filter')[0].addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            lastSearch = document.getElementById('query').value;
+            if (lastSearch.length > 0) {
+                filterPhotos(lastSearch, 1);
+            }
+        });
     }
 
     function showPhotos(data) {
-        // TODO - remove after debugging
-        console.log(data);
-
         var photos, currentPage, totalPages, thumbnailList;
         photos = data.photos.photo;
         currentPage = data.photos.page;
         totalPages = data.photos.pages;
         thumbnailList = document.getElementsByClassName('thumbnails-list')[0];
-        thumbnailGallery = new ThumbnailGallery(photos, thumbnailList, currentPage, totalPages);
+        thumbnailGallery = new ThumbnailGallery(photos, thumbnailList, currentPage, totalPages, filterPhotosMode, filterText);
         thumbnailGallery.createGallery();;
     }
     
@@ -52,7 +74,7 @@
             thumbnailList.removeChild(thumbnailList.firstChild);
         }
         
-        thumbnailGallery = new ThumbnailGallery(photos, thumbnailList, currentPage, totalPages);
+        thumbnailGallery = new ThumbnailGallery(photos, thumbnailList, currentPage, totalPages, filterPhotosMode, filterText);
         thumbnailGallery.createGallery();
     }
 
@@ -60,6 +82,7 @@
         Main: {
             init: init,
             initPhotos: initPhotos,
+            filterPhotos: filterPhotos,
             showPhotos: showPhotos,
             updatePhotos: updatePhotos
         }

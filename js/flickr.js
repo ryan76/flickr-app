@@ -20,6 +20,20 @@
         document.head.removeChild(script);
     }
 
+    function filterPhotos(params) {
+        var requestParameters = ClientUtils.extend(params, {
+            method: 'flickr.photos.search',
+            api_key: API_KEY,
+            user_id: USER_ID,
+            format: 'json'
+        });
+
+        var script = document.createElement('script');
+        script.src = ClientUtils.buildUrl(API_URL, requestParameters);
+        document.head.appendChild(script);
+        document.head.removeChild(script);
+    }
+
     function buildPhotoUrlDefault(imgObj) {
         return 'https://farm' + imgObj.farm + '.staticflickr.com/' + imgObj.server +
             '/' + imgObj.id + '_' + imgObj.secret + '.jpg';
@@ -37,6 +51,7 @@
 
     window.Flickr = ClientUtils.extend(window.Flickr || {}, {
         fetchPhotos: fetchPhotos,
+        filterPhotos: filterPhotos,
         buildPhotoUrlDefault: buildPhotoUrlDefault,
         buildPhotoUrlThumbnail: buildPhotoUrlThumbnail,
         buildPhotoUrlLarge: buildPhotoUrlLarge

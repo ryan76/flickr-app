@@ -29,6 +29,12 @@ header#top {
   padding: 0 20px 0 0;
 }
 
+.form-filter {
+  position: absolute;
+  right: 60px;
+  top: 21px;
+}
+
 .thumbnails-container {
   position: relative;
   @include column(10);
