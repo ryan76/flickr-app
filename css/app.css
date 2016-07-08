@@ -156,6 +156,9 @@ header#top {
         width: 97.91667%;
         margin: 0 1.04167%;
         margin-bottom: 0.5em; } }
+body {
+  background-color: #d2e8f7; }
+
 h1 {
   font-family: Georgia;
   font-size: 2em;
