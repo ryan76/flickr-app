@@ -15,7 +15,7 @@ $total-width: 100%;
 ////////////
 
 main {
-  margin-top: 90px;
+  margin-top: 115px;
 }
 
 header#top {
@@ -30,7 +30,7 @@ header#top {
 }
 
 .thumbnails-container {
-  @include column(8);
+  @include column(10);
   @include push(1);
 
   .thumbnails-list {
@@ -41,25 +41,27 @@ header#top {
       margin-bottom: 1em;
     }
   }
-}
 
-#sidebar {
-  @include column(2);
-  @include push(1);
+  #prev-button {
+
+  }
+
+  #next-button {
+
+  }
 }
 
 @media screen and (max-width: $medium-breakpoint) {
-  .thumbnails-container,
-  #sidebar {
+  main {
+    margin-top: 95px;
+  }
+
+  .thumbnails-container {
     @include column(12);
   }
 
   .thumbnails-container {
     margin-bottom: 2em;
-  }
-
-  #sidebar {
-    margin-bottom: 1em;
   }
 }
 

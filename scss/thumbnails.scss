@@ -10,13 +10,29 @@
 
 
 #prev-button {
-  color: $white;
-  background-color: $blue-13;
+  color: transparent;
+  background-color: transparent;
+  background-size: 100% 100%;
+  border: 0 ;
+  padding: 8px 15px;
+  width: 96px;
+  height: 96px;
+  &:focus {
+    outline: none;
+  }
 }
 
 #next-button {
-  color: $white;
-  background-color: $blue-13;
+  color: transparent;
+  background-color: transparent;
+  background-size: 100% 100%;
+  border: 0 ;
+  padding: 8px 15px;
+  width: 96px;
+  height: 96px;
+  &:focus {
+    outline: none;
+  }
 }
 
 @media screen and (max-width: $small-breakpoint) {

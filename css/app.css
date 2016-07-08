@@ -65,7 +65,7 @@ body {
     clear: both; }
 
 main {
-  margin-top: 90px; }
+  margin-top: 115px; }
 
 header#top {
   position: fixed;
@@ -80,7 +80,7 @@ header#top {
 .thumbnails-container {
   display: inline;
   float: left;
-  width: 64.58333%;
+  width: 81.25%;
   margin: 0 1.04167%;
   margin-left: 9.375%; }
   .thumbnails-container .thumbnails-list {
@@ -100,26 +100,18 @@ header#top {
       margin: 0 1.5625%;
       margin-bottom: 1em; }
 
-#sidebar {
-  display: inline;
-  float: left;
-  width: 14.58333%;
-  margin: 0 1.04167%;
-  margin-left: 9.375%; }
-
 @media screen and (max-width: 720px) {
-  .thumbnails-container,
-  #sidebar {
+  main {
+    margin-top: 95px; }
+
+  .thumbnails-container {
     display: inline;
     float: left;
     width: 97.91667%;
     margin: 0 1.04167%; }
 
   .thumbnails-container {
-    margin-bottom: 2em; }
-
-  #sidebar {
-    margin-bottom: 1em; } }
+    margin-bottom: 2em; } }
 @media screen and (max-width: 320px) {
   main {
     margin-top: 103px; }
@@ -182,12 +174,26 @@ button {
     transform: scale(1.1); }
 
 #prev-button {
-  color: #fff;
-  background-color: #1775b1; }
+  color: transparent;
+  background-color: transparent;
+  background-size: 100% 100%;
+  border: 0;
+  padding: 8px 15px;
+  width: 96px;
+  height: 96px; }
+  #prev-button:focus {
+    outline: none; }
 
 #next-button {
-  color: #fff;
-  background-color: #1775b1; }
+  color: transparent;
+  background-color: transparent;
+  background-size: 100% 100%;
+  border: 0;
+  padding: 8px 15px;
+  width: 96px;
+  height: 96px; }
+  #next-button:focus {
+    outline: none; }
 
 @media screen and (max-width: 320px) {
   .thumbnail {
