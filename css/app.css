@@ -162,6 +162,9 @@ h1 {
   padding: 0.5em;
   color: #166da5; }
 
+header h1 {
+  margin-left: 25px; }
+
 h2 {
   font-family: Georgia;
   font-size: 1.5em;
