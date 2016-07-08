@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/vendor/normalize.css" />
+        <link rel="stylesheet" href="css/vendor/lightbox.min.css" />
         <link rel="stylesheet" href="css/app.css" />
     </head>
     <body>
@@ -42,6 +43,12 @@
             </div>
         </main>
 
+        <script src="js/vendor/lightbox-plus-jquery.min.js"></script>
+        <script>
+            lightbox.option({
+                'positionFromTop': 150
+            })
+        </script>
         <script src="js/ClientUtils.js"></script>
         <script src="js/flickr.js"></script>
         <script src="js/thumbnailGallery.js"></script>

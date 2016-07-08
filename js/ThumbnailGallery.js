@@ -11,7 +11,7 @@
 
     ThumbnailGallery.prototype.createGallery = function() {
         
-        var img, link, listItem, photos, thumbnailList;
+        var img, link, listItem, photos, thumbnailList, imageNumber;
         photos = this.photos;
         thumbnailList = this.thumbnailList;
 
@@ -23,7 +23,10 @@
             img.title = photos[i].title;
 
             link = document.createElement('a');
-            link.href = img.src;
+            link.href = Flickr.buildPhotoUrlDefault(photos[i]);
+            imageNumber = i + 1;
+            link.setAttribute('data-lightbox', 'image-' + imageNumber);
+            link.setAttribute('data-title', photos[i].title);
             link.appendChild(img);
 
             listItem = document.createElement('li');
