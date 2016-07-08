@@ -30,6 +30,7 @@ header#top {
 }
 
 .thumbnails-container {
+  position: relative;
   @include column(10);
   @include push(1);
 
@@ -43,11 +44,13 @@ header#top {
   }
 
   #prev-button {
-
+    @include verticalCenter();
+    left: -95px;
   }
 
   #next-button {
-
+    @include verticalCenter();
+    right: -107px;
   }
 }
 

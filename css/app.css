@@ -78,6 +78,7 @@ header#top {
   padding: 0 20px 0 0; }
 
 .thumbnails-container {
+  position: relative;
   display: inline;
   float: left;
   width: 81.25%;
@@ -99,6 +100,24 @@ header#top {
       width: 21.875%;
       margin: 0 1.5625%;
       margin-bottom: 1em; }
+  .thumbnails-container #prev-button {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: -95px; }
+  .thumbnails-container #next-button {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: -107px; }
 
 @media screen and (max-width: 720px) {
   main {
